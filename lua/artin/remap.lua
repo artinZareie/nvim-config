@@ -20,5 +20,6 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("v", "C-3", ":norm I#<CR>")
-vim.keymap.set("n", "<leader>t", ':vs | te<CR>^WL<CR>')
+-- vim.keymap.set("n", "<leader>t", ':vs | te<CR>^WL<CR>')
+vim.api.nvim_set_keymap('n', '<leader>t', ':vnew +terminal | resize 40 | wincmd L<CR>', {noremap = true, silent = true})
 
