@@ -10,6 +10,6 @@ return {
     dapui = true,
   },
   config = function()
-    vim.cmd('colorscheme base16-catppuccin')
+    vim.cmd('colorscheme base16-ayu-dark')
   end
 }
