@@ -254,6 +254,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
+      'p00f/nvim-ts-rainbow'
     },
     build = ':TSUpdate',
   },
@@ -434,7 +435,10 @@ vim.defer_fn(function()
     ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-    auto_install = false,
+    auto_install = true,
+    sync_install = true,
+    ignore_install = {},
+    modules = {},
 
     highlight = { enable = true },
     indent = { enable = true },
@@ -490,6 +494,25 @@ vim.defer_fn(function()
           ['<leader>An'] = '@parameter.inner',
         },
       },
+    },
+    rainbow = {
+      enable = true,
+      extended_mode = true, -- Also highlight non-bracket delimiters like html tags
+      max_file_lines = nil, -- Do not enable for files with more than n lines
+      colors = {
+        "#FF8B8B",  -- light red
+        "#FFB96B",  -- light orange
+        "#FFD25B",  -- light yellow
+        "#8BFF8B",  -- light green
+        "#8BB6FF",  -- light blue
+      },
+      termcolors = {
+        "lightred",
+        "lightorange",
+        "lightyellow",
+        "lightgreen",
+        "lightblue",
+      }
     },
   }
 end, 0)
