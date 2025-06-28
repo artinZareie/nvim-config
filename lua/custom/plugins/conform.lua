@@ -11,13 +11,13 @@ return {
         rust = { 'rustfmt', lsp_format = 'fallback' },
         javascript = { 'prettier', stop_after_first = true },
         go = { 'gofmt', 'goimports' },
-        c = { 'clang-format' },
-        h = { 'clang-format' },
-        cpp = { 'clang-format' },
-        hpp = { 'clang-format' },
+        c = { 'clang_format' },
+        h = { 'clang_format' },
+        cpp = { 'clang_format' },
+        hpp = { 'clang_format' },
       },
       formatters = {
-        ['clang-format'] = {
+        ['clang_format'] = {
           prepend_args = { '--style=file', '--fallback-style=Microsoft' },
         },
       },
