@@ -18,7 +18,7 @@ return {
       },
       formatters = {
         ['clang_format'] = {
-          prepend_args = { '--style=file', '--fallback-style=Microsoft' },
+          prepend_args = { '--style=Microsoft', '--fallback-style=Microsoft' },
         },
       },
     }

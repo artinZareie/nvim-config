@@ -34,6 +34,17 @@ return {
               }
             end
           },
+          c = {
+            function()
+              return {
+                exe = "clang-format",
+                args = {
+                  "--style Microsoft"
+                },
+                stdin = true
+              }
+            end
+          },
           -- Add more filetypes here
         }
       })
