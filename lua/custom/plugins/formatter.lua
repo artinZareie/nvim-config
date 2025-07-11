@@ -45,6 +45,14 @@ return {
               }
             end
           },
+		  rust = {
+            function()
+              return {
+                exe = "rustfmt",
+                stdin = true
+              }
+            end
+          },
           -- Add more filetypes here
         }
       })
