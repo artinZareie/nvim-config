@@ -53,6 +53,24 @@ return {
               }
             end
           },
+		verilog = {  -- For .v files
+        function()
+          return {
+            exe = "verible-verilog-format",  -- Verible formatter
+            args = { "--indentation_spaces", "2", "-" },  -- 2-space indentation
+            stdin = true
+          }
+        end
+      },
+      systemverilog = {  -- For .sv files
+        function()
+          return {
+            exe = "verible-verilog-format",  -- Same as Verilog
+            args = { "--indentation_spaces", "2", "-" },
+            stdin = true
+          }
+        end
+      },
           -- Add more filetypes here
         }
       })
