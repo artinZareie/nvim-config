@@ -45,7 +45,7 @@ return {
               }
             end
           },
-          cu = {
+          cuda = {
             function()
               return {
                 exe = "clang-format",
