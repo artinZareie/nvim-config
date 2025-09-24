@@ -45,6 +45,17 @@ return {
               }
             end
           },
+          cu = {
+            function()
+              return {
+                exe = "clang-format",
+                args = {
+                  "--style Microsoft"
+                },
+                stdin = true
+              }
+            end
+          },
 		  rust = {
             function()
               return {
