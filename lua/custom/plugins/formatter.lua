@@ -23,6 +23,15 @@ return {
               }
             end
           },
+          py = {
+            function()
+              return {
+                exe = "black",
+                args = { "--fast", "-" },
+                stdin = true
+              }
+            end
+          },
           cpp = {
             function()
               return {
