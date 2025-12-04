@@ -13,6 +13,7 @@ return {
             function()
               return {
                 exe = "nasmfmt",
+				args = {'-ii 4'},
               }
             end,
           },
@@ -21,6 +22,7 @@ return {
             function()
               return {
                 exe = "nasmfmt",
+				args = {'-ii 4'},
               }
             end,
           },
