@@ -1,26 +1,74 @@
 return {
-  'stevearc/conform.nvim',
+  "stevearc/conform.nvim",
   opts = {},
   config = function()
-    require('conform').setup {
+    require("conform").setup({
       formatters_by_ft = {
-        lua = { 'stylua' },
-        -- Conform will run multiple formatters sequentially
-        python = { 'black' },
-        -- You can customize some of the format options for the filetype (:help conform.format)
-        rust = { 'rustfmt', lsp_format = 'fallback' },
-        javascript = { 'prettier', stop_after_first = true },
-        go = { 'gofmt', 'goimports' },
-        c = { 'clang_format' },
-        h = { 'clang_format' },
-        cpp = { 'clang_format' },
-        hpp = { 'clang_format' },
+
+        -- ==========================
+        -- Assembly
+        -- ==========================
+        asm = { "asmfmt" },
+        nasm = { "asmfmt" },
+
+        -- ==========================
+        -- Lua
+        -- ==========================
+        lua = { "stylua" },
+
+        -- ==========================
+        -- Python
+        -- ==========================
+        python = { "black" },
+
+        -- ==========================
+        -- Rust
+        -- ==========================
+        rust = { "rustfmt" },
+
+        -- ==========================
+        -- JavaScript
+        -- ==========================
+        javascript = { "prettier" },
+
+        -- ==========================
+        -- Go
+        -- ==========================
+        go = { "gofmt", "goimports" },
+
+        -- ==========================
+        -- C / C++ / Headers
+        -- ==========================
+        c = { "clang_format" },
+        h = { "clang_format" },
+        cpp = { "clang_format" },
+        hpp = { "clang_format" },
+
+        -- ==========================
+        -- Verilog / SystemVerilog
+        -- ==========================
+        verilog = { "verible-verilog-format" },
+        systemverilog = { "verible-verilog-format" },
       },
+
       formatters = {
-        ['clang_format'] = {
-          prepend_args = { '--style=Microsoft', '--fallback-style=Microsoft' },
+
+        -- Clang-format (Microsoft style)
+        clang_format = {
+          prepend_args = { "--style=Microsoft", "--fallback-style=Microsoft" },
+        },
+
+        -- Assembly (asmfmt)
+        asmfmt = {
+          args = { "-" },
+          stdin = true,
+        },
+
+        -- Verilog
+        ["verible-verilog-format"] = {
+          prepend_args = { "--indentation_spaces", "2" },
         },
       },
-    }
+    })
   end,
 }
